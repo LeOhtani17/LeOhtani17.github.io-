@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+  <meta charset="utf-8">
+  <style>
+  table {
+   border-collapse: collapse;
+   margin: auto;
+  }
+  td {
+   border: 8px solid pink;
+   width: 500px;
+   height: 100px;
+   font-size: 50px;
+   color: skyBlue;
+   text-align: center;
+  }
+  </style>
+  <title>kadai1003_11820289</title>
+ </head>
+ <body>
+  <table><tr><td id="msgTBL"></td></tr></table>
+
+  <script>
+  var IMAGE = ["bl.png", "gl.png", "mitsu.jpg"];
+  var msgNo = 0;
+
+  function changeMsg() {
+   var cell = document.getElementById("msgTBL");
+   cell.innerHTML = "<img src='"+IMAGE[msgNo]+"'>";
+   msgNo++;
+   if( msgNo == 3 ) msgNo = 0;
+   setTimeout(changeMsg, 2000);
+  }
+
+  window.onload = changeMsg();
+  </script>
+ </body>
+</html>

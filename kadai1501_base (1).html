@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+  <meta charset="utf-8">
+  <title>kadai1501_12345678</title>
+ </head>
+ <body>
+  <script>
+  //クラスの定義
+  function Member(namae, taijyu, shincyo) {
+   this.name = namae;
+   this.weight = taijyu;
+   this.height = shincyo;
+  }
+
+  //メソッドの定義
+  Member.prototype.BMI = function() {
+   var val = xxxxxx/(xxxxxx/100)**2;
+   var msg = xxxxxx + "\n"
+           + "　体重：" + xxxxxx + "kg\n"
+           + "　身長：" + xxxxxx + "cm\n"
+           + "　BMI値：" + val;
+   window.alert(msg);
+  }
+
+  //オブジェクトの作成
+  var human = [];
+  human[0] = new Member("山本 大介", 85, 180);
+  human[1] = new Member("山本 美咲", 55, 155);
+  human[2] = new Member("山本 拓也", 45, 160);
+
+  //メソッドの実行
+  for(var i=0; i<human.length; i++) {
+   human[i].xxxxxx;
+  }
+  </script>
+ </body>
+</html>
