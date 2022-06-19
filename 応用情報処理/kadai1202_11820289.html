@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+  <meta charset="utf-8">
+  <title>kadai1202_11820289</title>
+  <style>
+  table { border-collapse: collapse; }
+  td {
+   width: 15px;
+   height: 15px;
+   border: solid 1px;
+  }
+  </style>
+ </head>
+ <body>
+  <div>
+   <table id="dotTBL"></table>
+   <br>
+   <table id="ColorTBL"><tr></tr></table>
+  </div>
+  <br>
+
+  <div>
+   <input type="button" value="全消去" onclick="clearCell()">
+  </div>
+
+  <script>
+  var Matrix_Rows = 32;
+  var Matrix_Cols = 32;
+  var Color_Index = "black";
+
+  var dotTbl = document.getElementById("dotTBL");//ドット絵を描くテーブル
+  var colTbl = document.getElementById("ColorTBL");//色を選ぶテーブル
+
+  //ドット絵を描くテーブルを用意する
+  function dotTable() {
+   for(var i=0; i<Matrix_Rows; i++) {
+    var row = dotTbl.insertRow(-1); //行を追加する　-1の指定で最後の行として追加される
+    for(var j=0; j<Matrix_Cols; j++) {
+     var cell = row.insertCell(-1); //その行にセル(列)を追加する
+     cell.onclick = function(){
+      this.style.backgroundColor = Color_Index; //クリックしたセルに色を付ける
+     }
+	 cell.ondblclick = function (){
+	  this.style.backgroundColor = "white"
+     }
+    }
+   }
+  }
+
+  //選べる色を配列で定義する
+  var COL_SAMPLE = [ "black", "gray", "white", "red", "orange", "yellow", "lime", "cyan", "blue", "magenta" ];
+
+  //色を選ぶテーブルを用意する
+  function colorTable() {
+   for (var j=0; j<COL_SAMPLE.length; j++) {
+    var cell = colTbl.rows[0].insertCell(-1); //j番列のセル
+    cell.style.backgroundColor = COL_SAMPLE[j];
+    cell.onclick = function(){
+     Color_Index = this.style.backgroundColor; //クリックした時に色を取得する
+    }
+   }
+  }
+
+  //全てのセルを白色にする関数
+  function clearCell() {
+   for (var i=0; i<Matrix_Rows; i++) {
+    for (var j=0; j<Matrix_Cols; j++) {
+     dotTbl.rows[i].cells[j].style.backgroundColor = "white";
+    }
+   }
+  }
+
+  window.onload = function() { //HTMLが読み込まれると働く関数
+   dotTable();		//ドット絵を描くテーブル
+   colorTable();	//色を選ぶテーブル
+  }
+  </script>
+ </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+ <head>
+  <meta charset="utf-8">
+  <style>
+  body { text-align: center; }
+  table {
+   border-collapse: collapse;
+   margin: auto;
+  }
+  td {
+   border: 1px solid;
+   width: 150px;
+   height: 300px;
+  }
+  </style>
+  <title>kadai_11820289</title>
+ </head>
+ <body>
+  <table>
+  <caption id="cap">国名</caption>
+  <tr>
+  <td id="left"></td>
+  <td id="middle"></td>
+  <td id="right"></td>
+  </tr>
+  </table>
+  <br>
+  <input type="button" value="国名を入力する" onclick="changeCol()">
+
+  <script>
+  function changeCol() {
+   var cap = document.getElementById("cap");
+   var cel_l = document.getElementById("left");
+   var cel_m = document.getElementById("middle");
+   var cel_r = document.getElementById("right");
+
+   var country = prompt("どの国の国旗にしますか？\n1:フランス、2:イタリア、3:ギニア、4:マリのいずれかを入力してください。","");
+   cap.textContent = country;
+
+   if(country == "1" ||　country == "１") {
+    cel_l.style.backgroundColor = "navy";
+    cel_m.style.backgroundColor = "white";
+    cel_r.style.backgroundColor = "red";
+	cap.textContent =　"フランス"
+   }
+   else if(country == "2" ||　country == "２") {
+    cel_l.style.backgroundColor = "green";
+    cel_m.style.backgroundColor = "white";
+    cel_r.style.backgroundColor = "red";
+	cap.textContent =　"イタリア"
+   }
+   else if(country == "3" ||　country == "３") {
+    cel_l.style.backgroundColor = "red";
+    cel_m.style.backgroundColor = "gold";
+    cel_r.style.backgroundColor = "green";
+	cap.textContent =　"ギニア"
+   }
+   else if(country == "4" ||　country == "４") {
+    cel_l.style.backgroundColor = "green";
+    cel_m.style.backgroundColor = "yellow";
+    cel_r.style.backgroundColor = "red";
+	cap.textContent =　"マリ"
+   }
+   else {
+    alert("入力できる数字は1:フランス、2:イタリア、3:ギニア、4:マリのいずれかです。");
+   }
+  }
+  </script>
+ </body>
+</html>
